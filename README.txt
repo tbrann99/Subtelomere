@@ -1,7 +1,6 @@
 This repository contains the code used for the analysis documented in the publication entitlted "Subtelomeric plasticity contributes to gene family expansion in the human parasitic flatworm Schistosoma mansoni". 
-Please address comments or questions should you remain unsure to avp25[AT]cam.ac.uk
 
-I suggest adding a readme explaining the purpose of this repository and the tools it contains. This will help readers who wish to reuse the tools and the broader community in understanding the repository's content.
+Please address comments or questions should you remain unsure to avp25[AT]cam.ac.uk
 
 
 auto_sub.py
