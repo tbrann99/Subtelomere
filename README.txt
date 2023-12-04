@@ -5,8 +5,8 @@ Please address comments or questions should you remain unsure to avp25[AT]cam.ac
 
 auto_sub.py
 - Script to take pvalues per chromosome and to identify the end of enrichment at the chromosome termini.
-- This script takes a single input, the p-values from a wilcoxon test of sliding windows of repeat content across S. mansoni chromosomes.
-- Specifically, calculates subtelomere bounds using a five window sliding mean, with a threshold of p<0.1 for enrichment, at the start and end of each chromosome.
+- This script takes a single input, the p-values from a wilcoxon test of sliding windows of repeat content across S. mansoni chromosomes, now after the implementation of a Savitsky Golay filter.
+- Specifically, calculates subtelomere bounds when a threshold of p<0.1 for enrichment is achieved and subsequently lost, at the start and end of each chromosome.
 
 subtel.py
 - Script takes paired loci and returns the list with a tag corresponding to if it is subtelomeric or chromosome body (using bounds from subtelomere.bed)
