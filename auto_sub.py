@@ -8,7 +8,7 @@ import csv
 ###Script to take pvalues per chromosome and to identify the end of enrichment at the chromosome termini
 #ARG1 = pvals from wilcoxon sliding windows across chromosomes
 #Output to stdout
-#Calculates subtelomere bounds in a five window sliding range, with a threshold of 0.1 for enrichment
+#In a five window sliding range, with a threshold of 0.1 for enrichment
 
 
 
@@ -19,35 +19,21 @@ lol = list(csv.reader(open(pvals, 'rt'), delimiter='\t'))
 
 chroms=[]
 
-##Pull unique chromosomes from the genome file file
+##Pull unique chromosomes
 for i in range(0,count):
 	if(lol[i][0] not in chroms):
 		chroms.append(lol[i][0])
 
-#Function to find enrichment at chromosome end (input is chromosome end p value windows)
+#Function to find enrichment at end
 def find_subtel(pval_arr):
 	on=0
-	penalty=0
-	for i in range(2,len(pval_arr)-2):
-		tot=float(pval_arr[i-2])+float(pval_arr[i-1])+float(pval_arr[i])+float(pval_arr[i+1])+float(pval_arr[i+2])
-		mov_avg=tot/5
-		#print(mov_avg)
-		if(mov_avg>0.5):
-			penalty+=1
-
-		if(mov_avg<0.1):
-			##Activate our subtel
+	for i in range(0,len(pval_arr)):
+		if(float(pval_arr[i]) < 0.1):
 			on=1
-			penalty-=1
-
-		if(on==1 and mov_avg>0.1 and penalty<10):
-			#Found a subtelomere and have left the subtelomere, therefore we report the 
+		if(float(pval_arr[i]) > 0.1 and on==1):
 			return(i-1)
-	if(on==1 and penalty<10):
-		#End of subtelomere window
-		return(i-1)
-
-
+		if(on==1 and i==len(pval_arr)-1):
+			return(i-1)
 
 ##For each chromosome, pull out the first 40 entries and last 40, corresponds to the last and first 5Mbp
 for j in chroms:
@@ -85,8 +71,4 @@ for j in chroms:
 	else:
 		print(j,end="\t")
 		print(int(locs[len(locs)-border]-100000))
-	#
-		
-
-	###function to interpret windows
 
