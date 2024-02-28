@@ -1,7 +1,8 @@
-This repository contains the code used for the analysis documented in the publication entitlted "Subtelomeric plasticity contributes to gene family expansion in the human parasitic flatworm Schistosoma mansoni". 
-https://doi.org/10.21203/rs.3.rs-3408197
+This repository contains the code used for the analysis documented in the publication entitlted "Subtelomeric plasticity contributes to gene family expansion in the human parasitic flatworm Schistosoma mansoni". Publication accepted at BMC Genomics 
 
-Supplementary files can be found in their native formats, alongside a bioinformatics workbook at https://zenodo.org/records/10143033
+Brann, T., Beltramini, A., Chaparro, C. et al. Subtelomeric plasticity contributes to gene family expansion in the human parasitic flatworm Schistosoma mansoni. BMC Genomics 25, 217 (2024). https://doi.org/10.1186/s12864-024-10032-8
+
+Supplementary files can be found in their native formats, alongside a bioinformatics workbook at https://zenodo.org/records/10721345
 Please address comments or questions should you remain unsure to avp25[AT]cam.ac.uk
 
 
